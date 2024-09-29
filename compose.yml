@@ -1,0 +1,11 @@
+services:
+  app:
+    build:
+      context: ./next_level
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      # フロントエンドのソースコードをコンテナ内の/appディレクトリにマウント
+      - ./next_level:/app
+      - /app/.next
